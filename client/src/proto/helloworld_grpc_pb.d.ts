@@ -4,7 +4,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import * as grpc from "@grpc/grpc-js";
+import * as grpc from "grpc";
 import * as helloworld_pb from "./helloworld_pb";
 
 interface IGreeterService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
@@ -23,7 +23,7 @@ interface IGreeterService_ISayHello extends grpc.MethodDefinition<helloworld_pb.
 
 export const GreeterService: IGreeterService;
 
-export interface IGreeterServer extends grpc.UntypedServiceImplementation {
+export interface IGreeterServer {
     sayHello: grpc.handleUnaryCall<helloworld_pb.HelloRequest, helloworld_pb.HelloReply>;
 }
 
@@ -34,7 +34,7 @@ export interface IGreeterClient {
 }
 
 export class GreeterClient extends grpc.Client implements IGreeterClient {
-    constructor(address: string, credentials: grpc.ChannelCredentials, options?: Partial<grpc.ClientOptions>);
+    constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
     public sayHello(request: helloworld_pb.HelloRequest, callback: (error: grpc.ServiceError | null, response: helloworld_pb.HelloReply) => void): grpc.ClientUnaryCall;
     public sayHello(request: helloworld_pb.HelloRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: helloworld_pb.HelloReply) => void): grpc.ClientUnaryCall;
     public sayHello(request: helloworld_pb.HelloRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: helloworld_pb.HelloReply) => void): grpc.ClientUnaryCall;

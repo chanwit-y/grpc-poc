@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "./subscription";
+package subscription;
+
+service SubscriptionService {
+  rpc Subscribe (SubscriptionRequest) returns (stream SubscriptionResponse) {}
+  rpc AddTopic (TopicRequest) returns (TopicResponse) {}
+}
+
+message TopicRequest {
+  string topic = 1;
+}
+
+message TopicResponse {
+  string message = 1;
+}
+
+message SubscriptionRequest {
+  string topic = 1;
+}
+
+message SubscriptionResponse {
+  string message = 1;
+}

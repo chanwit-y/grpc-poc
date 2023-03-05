@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription;
+
+service SubscriptionService {
+  rpc Subscribe (SubscriptionRequest) returns (stream SubscriptionResponse) {}
+}
+
+message SubscriptionRequest {
+  string topic = 1;
+}
+
+message SubscriptionResponse {
+  string message = 1;
+}

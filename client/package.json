@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "proto:gen": "sh proto-gen2.sh",
+    "proto:gen3": "sh proto-gen3.sh",
     "build": "next build",
     "dev": "next dev",
     "postinstall": "prisma generate",
@@ -19,12 +20,19 @@
     "@trpc/next": "^10.9.0",
     "@trpc/react-query": "^10.9.0",
     "@trpc/server": "^10.9.0",
+    "dns": "^0.2.2",
+    "fs": "0.0.1-security",
     "google-protobuf": "^3.21.2",
     "grpc": "^1.24.11",
+    "grpc-web": "^1.4.2",
+    "http2": "^3.3.7",
+    "net": "^1.0.2",
     "next": "^13.2.1",
+    "protobufjs": "^7.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "1.9.1",
+    "tls": "^0.0.1",
     "zod": "^3.20.6"
   },
   "devDependencies": {
@@ -45,6 +53,7 @@
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "prisma": "^4.9.0",
+    "protoc-gen-js": "^3.21.2",
     "tailwindcss": "^3.2.0",
     "typescript": "^4.9.5"
   },
